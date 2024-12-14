@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "rd3c3_guide",
+    "title": "Guidelines for measurement invariance and aligment methods using library(rd3c3)",
     "section": "",
     "text": "Preface\nlibrary(rd3c3) is A wrapper function library designed to fit model-based invariance models and alignment methods to assess cross cultural comparability of responses between countries and groups, on international large-scale assessments.\nIt helps researchers to write Mplus code, via MplusAutomation to implement invariance analysis.\nIt uses graded response models with a probit link (i.e., confirmatory factor analysis with ordinal indicators).",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#how-to-install",
     "href": "index.html#how-to-install",
-    "title": "rd3c3_guide",
+    "title": "Guidelines for measurement invariance and aligment methods using library(rd3c3)",
     "section": "How to install",
     "text": "How to install\n\n# -----------------------------------------------\n# install rd3c3\n# -----------------------------------------------\n\ndevtools::install_github(\n  'dacarras/rd3c3',\n  force = TRUE\n)",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#how-to-cite-the-current-document",
     "href": "index.html#how-to-cite-the-current-document",
-    "title": "rd3c3_guide",
+    "title": "Guidelines for measurement invariance and aligment methods using library(rd3c3)",
     "section": "How to cite the current document",
     "text": "How to cite the current document\nCarrasco, Diego; Sandoval-Hernández, Andrés; Eryilmaz, Nurullah (2024). Guidelines for measurement invariance and aligment methods using library(rd3c3). figshare. Software. https://doi.org/10.6084/m9.figshare.28028564",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "index.html#acknowledgement",
     "href": "index.html#acknowledgement",
-    "title": "rd3c3_guide",
+    "title": "Guidelines for measurement invariance and aligment methods using library(rd3c3)",
     "section": "Acknowledgement",
     "text": "Acknowledgement\nThis work was supported by the IEA Research and Development Fund.",
     "crumbs": [
