@@ -1,9 +1,42 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+`rd3c3` is A wrapper function library designed to fit model-based invariance analysis and alignment methods analysis for international large-scale assessments, using graded response models with a probit link.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
 
-```{r}
-1 + 1
+```{r echo = FALSE, out.width = '75%', fig.retina = 2}
+
+# -----------------------------------------------
+# instrument
+# -----------------------------------------------
+
+knitr::include_graphics(paste0('logo.png'))
+
 ```
+
+
+## How to install
+
+```{r, echo = TRUE, eval = FALSE, warning=FALSE, message = FALSE}
+#| code-fold: FALSE
+
+# -----------------------------------------------
+# install rd3c3
+# -----------------------------------------------
+
+devtools::install_github(
+devtools::install_github(
+  'dacarras/rd3c3',
+  force = TRUE
+)
+
+```
+
+
+## How to cite the current document
+
+Carrasco, Diego; Sandoval-Hernández, Andrés; Eryilmaz, Nurullah (2024). Guidelines for measurement invariance and aligment methods using `library(rd3c3)`. figshare. Software. https://doi.org/10.6084/m9.figshare.28028564
+
+
+## Acknowledgement
+
+This work was supported by the IEA Research and Development Fund.

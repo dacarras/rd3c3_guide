@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sandoval, Carrasco &amp; Erylmaz">
+<meta name="author" content="Sandoval-Hernández, Carrasco &amp; Eryılmaz">
 <meta name="dcterms.date" content="2024-12-14">
 
 <title>rd3c3_guide</title>
@@ -193,7 +193,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul class="collapse">
+  <li><a href="#how-to-install" id="toc-how-to-install" class="nav-link" data-scroll-target="#how-to-install">How to install</a></li>
+  <li><a href="#how-to-cite-the-current-document" id="toc-how-to-cite-the-current-document" class="nav-link" data-scroll-target="#how-to-cite-the-current-document">How to cite the current document</a></li>
+  <li><a href="#acknowledgement" id="toc-acknowledgement" class="nav-link" data-scroll-target="#acknowledgement">Acknowledgement</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -212,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Sandoval, Carrasco &amp; Erylmaz </p>
+             <p>Sandoval-Hernández, Carrasco &amp; Eryılmaz </p>
           </div>
   </div>
     
@@ -233,16 +238,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>This is a Quarto book.</p>
-<p>To learn more about Quarto books visit <a href="https://quarto.org/docs/books" class="uri">https://quarto.org/docs/books</a>.</p>
+<p><code>rd3c3</code> is A wrapper function library designed to fit model-based invariance analysis and alignment methods analysis for international large-scale assessments, using graded response models with a probit link.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="logo.png" class="img-fluid figure-img" style="width:75.0%"></p>
+</figure>
 </div>
 </div>
+</div>
+<section id="how-to-install" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-install">How to install</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install rd3c3</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">'dacarras/rd3c3'</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">force =</span> <span class="cn">TRUE</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="how-to-cite-the-current-document" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-cite-the-current-document">How to cite the current document</h2>
+<p>Carrasco, Diego; Sandoval-Hernández, Andrés; Eryilmaz, Nurullah (2024). Guidelines for measurement invariance and aligment methods using <code>library(rd3c3)</code>. figshare. Software. https://doi.org/10.6084/m9.figshare.28028564</p>
+</section>
+<section id="acknowledgement" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgement">Acknowledgement</h2>
+<p>This work was supported by the IEA Research and Development Fund.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
