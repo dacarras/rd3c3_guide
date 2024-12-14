@@ -4,15 +4,16 @@ project:
 
 book:
   title: "rd3c3_guide"
-  author: "Norah Jones"
+  author: "Sandoval, Carrasco & Erylmaz"
   date: "12/14/2024"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
+    - introduction.qmd
+    - section_1_response_model.qmd
+    - section_2_partial.qmd
+    - section_3_rd3c3.qmd
+    - section_4_example.qmd
+    - section_5_intended_use.qmd
 
 format:
   html:

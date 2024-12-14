@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>rd3c3_guide - 2&nbsp; Response model</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./section_2_partial.html" rel="next">
+<link href="./introduction.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./section_1_response_model.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Response model</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">rd3c3_guide</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./section_1_response_model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Response model</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./section_2_partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partial invariance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./section_3_rd3c3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Library overview</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./section_4_example.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Applied Examples</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./section_5_intended_use.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Intended use</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#graded-response-model" id="toc-graded-response-model" class="nav-link active" data-scroll-target="#graded-response-model"><span class="header-section-number">2.1</span> Graded Response Model</a></li>
+  <li><a href="#invariance-model-specifications-with-the-grm-model" id="toc-invariance-model-specifications-with-the-grm-model" class="nav-link" data-scroll-target="#invariance-model-specifications-with-the-grm-model"><span class="header-section-number">2.2</span> Invariance model specifications with the GRM model</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">2.3</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Response model</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The present guideline is focus on measurement invariance models for confirmatory factor analysis for ordinal indicators. In particular, we are focusing on the graded response model with probit link (Bovaird &amp; Koziol, 2012).</p>
+<section id="graded-response-model" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="graded-response-model"><span class="header-section-number">2.1</span> Graded Response Model</h2>
+<p>The graded response model can be found in the literature also under the name of confimatory factor analysis for ordinal indicators, the two parameter normal ogive form of the graded response model (Wang &amp; Wang, 2020), and as a graded response model with probit link (Bovaird &amp; Koziol, 2012). The graded response model is a response model propose for ordinal indicators, proposed by Samejima (1968). Historically, it appears before the partial credit model (Masters, 1982), which is the most popular response model to generate scores across several large scale assessment studies (Carrasco, Irribarra &amp; González, 2022). This model includes different model variants. These variants include the homogenous and the heterogeneous case (Samejima, 2016). The homogenous case, is a model where factor loadings (or item slopes) are fixed to be common across items; while the heteorogenous case leaves the item slope parameters to vary freely. Moreover, this model can be specified with different link functions, the logit function and the probit function (Bovaird &amp; Koziol, 2012).</p>
+<p>We will review the formal presentation of these two variants, so is easier to make a bridge between polytomous item response theory models, and confirmatory factor models. Formally, these two models can be expressed with the following equations:</p>
+<p><span id="eq-grm_logit"><span class="math display">\[
+Pr(y_{ip} &gt; k) = \frac{exp[a_{i}(\theta_{p}-b_{ik})]}{exp[1 + a_{i}(\theta_{p}-b_{ik})]}
+\tag{2.1}\]</span></span></p>
+<p>The GRM model with a logit link expressed the probability of responses <span class="math inline">\(y\)</span> to item <span class="math inline">\(i\)</span> from person <span class="math inline">\(p\)</span> as a ratio. In the exponentiated numerator we have the propensity to choose the ordered categories in a direction ( <span class="math inline">\(\theta_{p}\)</span> ), minus the boundary category parameter <span class="math inline">\(b\)</span> for the <span class="math inline">\(i\)</span>th item category <span class="math inline">\(k\)</span> or higher, multiplied by the slope of the items <span class="math inline">\(a_{i}\)</span>. The parameter <span class="math inline">\(a_{i}\)</span> is often interpreted as a discrimination parameter, because the higher is its value, the higher is the separation between low and high attribute persons in their expected response probability. In the denominator of the previous formula, we repeat the previous term, the exponentiation of the propensity minus the boundary category parameter times the slope, plus a unity. The present formula can be expressed in a more concise manner, by calling the logit link function.</p>
+<p><span id="eq-grm_logit_link"><span class="math display">\[
+logit[Pr(y_{ip} \leq k)] = a_{i}(\theta_{p}-b_{ik})
+\tag{2.2}\]</span></span></p>
+<p>Graded response models (GRM) with logit link are very similar to partial credit model (PCM), under the homogeneous case. In the homogenous case, the <span class="math inline">\(a_{i}\)</span> can be constrained to one, and then only the person locations ( <span class="math inline">\(\theta_{p}\)</span> ) and item locations ( <span class="math inline">\(b_{ik}\)</span> ) are included in the model. The main difference between these two models is their logit link function. While the PCM includes the adjacent logit link; the GRM relies on the cumulative category link (Mellenbergh, 1994). Thus, for items with three ordered response categories, the item locations are the natural logarithms of the odds of answering 1 vs 2, and 2 vs 3 for the adjacent logit link; while for the cumulative link function consists of natural logarithms contrasting the odds of answering 1 vs 2, 3; and 1, 2 vs 3 (Carrasco et al., 2022).</p>
+<p>An alternative formulation for the present model and the focus of the present guideline is teh GRM with the probit link. Following Bovaird &amp; Koziol (2012), we express this model with the next equation:</p>
+<p><span id="eq-grm_probit"><span class="math display">\[
+Pr(y_{ip} &gt; k) = \phi(-\tau_{ik} + \lambda_{i}\theta_{p})
+\tag{2.3}\]</span></span></p>
+<p>Similary to the previous equation, we can express the previous formula in a more concise manner by using the probit link in the equation:</p>
+<p><span id="eq-grm_probit_link"><span class="math display">\[
+probit[Pr(y_{ip} &gt; k)] = \tau_{ik} - \lambda_{i}\theta_{p}
+\tag{2.4}\]</span></span></p>
+<p>This second formulation is more akin to the confirmatory factor analysis tradition, where is common to include item intercepts (i.e., item location parameters), item slopes (i.e., factor loadings) and a term for the theoretical factor.</p>
+</section>
+<section id="invariance-model-specifications-with-the-grm-model" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="invariance-model-specifications-with-the-grm-model"><span class="header-section-number">2.2</span> Invariance model specifications with the GRM model</h2>
+<p>A response model can be considered invariant if all reponse model parameters are can be held equal across groups, besides the group latent means. This general idea applies to polytomous item response models such as confirmatory factor analysis, graded response models (e.g., Wu &amp; Estabrook, 2016; Tse et al., 2024) and to mixture variants of response models (e.g., Masyn, 2017; Torres Irribarra &amp; Carrasco, 2021); that is response models with latent factors that are discrete instead of normally distributed (Torres Irribarra, 2021). This is the most demanding for equivalence of responses models between groups, usually described as strict invariance. A more relaxed version of invariance model specification is <em>scalar invariance</em>, in which all response model parameters are held equal across groups, beside latent means and item uniqueness or scale factors (e.g., Grimm et al.&nbsp;2016; Tse et al., 2024). Moreover, model specification with more parameters allow to vary freely are not able to provide latent mean comparisons. These includes models with common thresholds but free factor loadings, and purely descriptive models were all response models parameters are allowed to vary freely.</p>
+<p>A common practice in measurement invariance with CFA for continous indicators is to start with the model with less constrains (e.g., Dimitrov, 2010), and continue further till the most constrained model (i.e., strict invariance). In essence, this is a model building sequence (Kline, 2023). In this sequence, difference model specifications are included. The first, is the <strong>configural</strong> model specification where only the model sructure is common, yet all response model parameters vary freely between groups. Then is followed by the <strong>metric</strong> model specification where only factor loadings are held equal, ye, there are no parameters in the multigroup model to compare latent means between groups (e.g.&nbsp;Wu &amp; Estabrook, 2016). Hence, this model spefication is similar to a latent centered means. In a third stage, the <strong>scalar</strong> model specification is included. This model helds as common parameters factor loadings and model indicator intercepts and include latent mean constraints. This model allows for latent mean comparison among groups. Finally, the most constrained model specification, the <strong>strict</strong> model held as common parameters all response model parameters, with the exemption of latent means. Thus, allowing to compare groups on latent means, while assuming residual error of the response model are common among groups.</p>
+<p>Model specification sequence for assessing invariance on CFA with ordinal indicators, is different from CFA wih continous indicators. Wu &amp; Estabrook (2016) asserts that invariance within the CFA for ordinal indicators, common thresholds are needed before common factor loadings can be introduced in the model building sequence (Wu &amp; Estabrook, 2016; Svetina, et al.&nbsp;2020; Tse, et al, 2024). In practice, common factor loadings between group cannot be tested alone (Wu &amp; Estabrook, 2016, p1023). Complementary, Tse et al.&nbsp;(2024) recommends to assess if strict invariance holds among groups, before relying on total scores (e.g., observed means) for group comparisons. Then, if strict invariance fails, then proceed to search for partially invariant solutions such as, partially strict invariance, and scalar invariance if latent means can be used instead of observed mean scores. Following Tse et al.&nbsp;(2024) one can alter the model sequence for a model trimming sequence instead (Kline, 2023). That is, instead of starting with the model with the most freely estimated parameters, one can start with the model with the most held equal parameters among groups. As such, the model sequence for GRM would be: strict, scalar, configural (with common thresholds), and a base model (with freely estimated response model parameters).</p>
+<p>In the following figure, we summarize the parameters of the response models that can be held equal between groups in each of the model specification for CFA with continous and for CFA with ordinal indicators.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figure_1_specifications.png" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Figure 1: response model parameters being held equal in each model specification.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The present table is a rough summary of the different response model parameters that are held equal among groups, to specify each model solution. For example, in Wu &amp; Estabrook (2016) the configural model specification for the CFA with ordinal indicators consists of a model where thresholds are held equal among groups. This is the baseline model from which model comparisons can be made in contrast to scalar and strict solutions of the GRM model. However, the configural model has more constraints than solely common thresholds, this includes factor means constrained to zero (i.e., centered) and factor variances fix to 1 on all groups (see Svetina et al., 2020). Additionally, Tse et al.&nbsp;(2024) discussess alternative model specification for the configural solution, using the theta parametrization in which factor loadings are held common between groups, and threshols are held common for marker indicators. In the present guidelines we will review these model specifications in more detail in section 4, following Svetina et al.&nbsp;(2020) and Wu &amp; Estabrook (2016).</p>
+<p>It should be clear that model specifications propose for CFA with continous indicators are not equivalent for other response models. The weak invariance (e.g., Dimitrov, 2010) or metric invariance model specification (Wu &amp; Estabrook, 2016), where common factor loadings are held equal across groups, do not reach a model specification that holds the same interpretation of traditional CFA, for CFA with ordinal indicators (Wu &amp; Estabrook, 2016; Svetina, et al.&nbsp;2020; Tse, et al, 2024). A similar observation can be done for the assumed interpretation of the metric model specification of latent class models (e.g., Hooghe &amp; Oser, 2015; Hooghe et al.&nbsp;2016), which is an special case of a non-invariant solution (Masyn, 2017), and doesn’t hold the same interpretation of the random term across groups, the configuration of the laten classess (Torres Irribarra, et al., 2021). If invariance holds, the purpose is to assert that group differences are on the random term of the response model (i.e., factors, latent means, latent classes); in contrast, if the model specification doesn’t provide group differences estimates on the same scale, then subtantive conclusions are not tenable, because these do not have a common meaning between groups. In summary, the interpretation one can hold over response models fitted between groups with varying equality constrains among groups are not equivalent between response models.</p>
+<p>In the following section (section 2) we will describe what are partially invariant solutions.</p>
+</section>
+<section id="references" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="references"><span class="header-section-number">2.3</span> References</h2>
+<p>Carrasco, D., Irribarra, D. T., &amp; González, J. (2022). Continuation Ratio Model for Polytomous Items Under Complex Sampling Design. In Quantitative Psychology (pp.&nbsp;95–110). https://doi.org/10.1007/978-3-031-04572-1_8</p>
+<p>Dimitrov, D. M. (2010). Testing for Factorial Invariance in the Context of Construct Validation. Measurement and Evaluation in Counseling and Development, 43, 121–149. https://doi.org/10.1177/0748175610373459</p>
+<p>Bovaird, J. A., &amp; Koziol, N. A. (2012). Measurement Models for Ordered-Categorical Indicators. In R. H. Hoyle (Ed.), Handbook of Structural Equation Modeling (pp.&nbsp;495–511). Guilford Press.</p>
+<p>Grimm, K. J., &amp; Liu, Y. (2016). Residual Structures in Growth Models With Ordinal Outcomes. Structural Equation Modeling, 23(3), 466–475. https://doi.org/10.1080/10705511.2015.1103192</p>
+<p>Hooghe, M., &amp; Oser, J. (2015). The rise of engaged citizenship: The evolution of citizenship norms among adolescents in 21 countries between 1999 and 2009. International Journal of Comparative Sociology, 56(1), 29–52. https://doi.org/10.1177/0020715215578488.</p>
+<p>Hooghe, M., Oser, J., &amp; Marien, S. (2016). A comparative analysis of ‘good citizenship’: A latent class analysis of adolescents’ citizenship norms in 38 countries. International Political Science Review, 37(1), 115–129. https://doi.org/10.1177/0192512114541562.</p>
+<p>Kline, R. B. (2023). Principles and Practice of Structural Equation Modeling (5th ed.). Guilford Press.</p>
+<p>Masters, G. N. (1982). A rasch model for partial credit scoring. Psychometrika, 47(2), 149–174. https://doi.org/10.1007/BF02296272</p>
+<p>Masyn, K. E. (2017). Measurement Invariance and Differential Item Functioning in Latent Class Analysis With Stepwise Multiple Indicator Multiple Cause Modeling. Structural Equation Modeling: A Multidisciplinary Journal, 24(2), 180–197. https://doi.org/10.1080/10705511.2016.1254049</p>
+<p>Samejima, F. (1968). Estimation of latent Ability using a response pattern of graded scores. ETS Research Bulletin Series, 1968(1), i–169. https://doi.org/10.1002/j.2333-8504.1968.tb00153.x</p>
+<p>Samejima, F. (2016). Graded Response Models. In W. J. van der Linden (Ed.), Handbook of Item Response Theory. Volume One. Models (pp.&nbsp;95–107). CRC Press. https://doi.org/10.1201/9781315374512-16</p>
+<p>Torres Irribarra, D. (2021). A Pragmatic Perspective of Measurement. Springer International Publishing. https://doi.org/10.1007/978-3-030-74025-2</p>
+<p>Torres Irribarra, D., &amp; Carrasco, D. (2021). Profiles of Good Citizenship. In E. Treviño, D. Carrasco, E. Claes, &amp; K. J. Kennedy (Eds.), Good Citizenship for the Next Generation. A Global Perspective Using IEA ICCS 2016 Data (pp.&nbsp;33–50). Springer International Publishing. https://doi.org/10.1007/978-3-030-75746-5_3</p>
+<p>Tse, W. W. Y., Lai, M. H. C., &amp; Zhang, Y. (2024). Does strict invariance matter? Valid group mean comparisons with ordered-categorical items. Behavior Research Methods, 56(4), 3117–3139. https://doi.org/10.3758/s13428-023-02247-6</p>
+<p>Wang, J., &amp; Wang, X. (2020). Confirmatory Factor Analysis. In Structural Equation Modeling: Applications Using Mplus (pp.&nbsp;33–117). John Wiley &amp; Sons, Inc.&nbsp;https://doi.org/10.4324/9781315832746-25</p>
+<p>Wu, H., &amp; Estabrook, R. (2016). Identification of Confirmatory Factor Analysis Models of Different Levels of Invariance for Ordered Categorical Outcomes. Psychometrika, 81(4), 1014–1045. https://doi.org/10.1007/s11336-016-9506-0</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./introduction.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./section_2_partial.html" class="pagination-link" aria-label="<span class='chapter-number'>3</span>&nbsp; <span class='chapter-title'>Partial invariance</span>">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partial invariance</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
