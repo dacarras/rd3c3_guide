@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "rd3c3_guide",
     "section": "",
-    "text": "Preface\nrd3c3 is A wrapper function library designed to fit model-based invariance analysis and alignment methods analysis for international large-scale assessments, using graded response models with a probit link.",
+    "text": "Preface\nlibrary(rd3c3) is A wrapper function library designed to fit model-based invariance models and alignment methods to assess cross cultural comparability of responses between countries and groups, on international large-scale assessments.\nIt helps researchers to write Mplus code, via MplusAutomation to implement invariance analysis.\nIt uses graded response models with a probit link (i.e., confirmatory factor analysis with ordinal indicators).",
     "crumbs": [
       "Preface"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#how-to-install",
     "title": "rd3c3_guide",
     "section": "How to install",
-    "text": "How to install\n\n# -----------------------------------------------\n# install rd3c3\n# -----------------------------------------------\n\ndevtools::install_github(\ndevtools::install_github(\n  'dacarras/rd3c3',\n  force = TRUE\n)",
+    "text": "How to install\n\n# -----------------------------------------------\n# install rd3c3\n# -----------------------------------------------\n\ndevtools::install_github(\n  'dacarras/rd3c3',\n  force = TRUE\n)",
     "crumbs": [
       "Preface"
     ]

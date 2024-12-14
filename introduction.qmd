@@ -10,7 +10,7 @@ The present guidelines are focus on how to produce different response model spec
 
 Additionally, `library(rd3c3)` provides wrapper functions to fit alignment methods. These are invariance model specification that relaxes the models parameter constrains among groups in search of the least discrepant model estimates across the compared groups (Muthén & Asparouhov, 2014).
 
-The following guideline is structure as follows: we first review measurement invariance within the propose response model, the graded response model (section 1); we then proceed to discuss the limitations of partially invariant models (section 2); we described the library in general terms (section 3); we provide a full example of invariance analysis (section 4); and finally we close the present guidelines with a section of intended uses (section 5).
+The following guideline is structure as follows: we first review measurement invariance within the propose response model, the graded response model [(section 1)](https://dacarras.github.io/rd3c3_guide/section_1_response_model.html); we then proceed to discuss the limitations of partially invariant models [(section 2)](https://dacarras.github.io/rd3c3_guide/section_2_partial.html); we described the library in general terms [(section 3)](https://dacarras.github.io/rd3c3_guide/section_3_rd3c3.html); we provide a full example of invariance analysis [(section 4)](https://dacarras.github.io/rd3c3_guide/section_4_example.html); and finally we close the present guidelines with a section of intended uses [(section 5)](https://dacarras.github.io/rd3c3_guide/section_5_intended_use.html).
 
 ## References
 

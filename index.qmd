@@ -1,7 +1,10 @@
 # Preface {.unnumbered}
 
-`rd3c3` is A wrapper function library designed to fit model-based invariance analysis and alignment methods analysis for international large-scale assessments, using graded response models with a probit link.
+`library(rd3c3)` is A ***wrapper function library*** designed to fit model-based invariance models and alignment methods to assess cross cultural comparability of responses between countries and groups, on international large-scale assessments.
 
+It helps researchers to write [Mplus](https://www.statmodel.com/) code, via [MplusAutomation](https://github.com/michaelhallquist/MplusAutomation) to implement invariance analysis.
+
+It uses graded response models with a probit link (i.e., confirmatory factor analysis with ordinal indicators).
 
 ```{r echo = FALSE, out.width = '75%', fig.retina = 2}
 
@@ -13,7 +16,6 @@ knitr::include_graphics(paste0('logo.png'))
 
 ```
 
-
 ## How to install
 
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE, message = FALSE}
@@ -24,18 +26,15 @@ knitr::include_graphics(paste0('logo.png'))
 # -----------------------------------------------
 
 devtools::install_github(
-devtools::install_github(
   'dacarras/rd3c3',
   force = TRUE
 )
 
 ```
 
-
 ## How to cite the current document
 
 Carrasco, Diego; Sandoval-Hernández, Andrés; Eryilmaz, Nurullah (2024). Guidelines for measurement invariance and aligment methods using `library(rd3c3)`. figshare. Software. https://doi.org/10.6084/m9.figshare.28028564
-
 
 ## Acknowledgement
 
