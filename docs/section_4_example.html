@@ -233,7 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>In particular we are using student responses to the items of the scale “Sense of School Belonging”, from Chile and England.</li>
 <li>The data file includes 4115 students from Chile, and 3365 students from England, from 8th grade</li>
-<li>We are using a taylored made data file, where we include specific clustering and survey design variables:
+<li>We are using a tailor-made data file where we include specific clustering and survey design variables:
 <ul>
 <li>id_i = unique id number for students</li>
 <li>id_j = unique id number for schools</li>
@@ -276,13 +276,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="model-based-invariance-analysis"><span class="header-section-number">5.2.1</span> Model based invariance analysis</h3>
 <p>Model based invariance analysis includes five model specifications:</p>
 <ul>
-<li><p><strong>pooled</strong> is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). Is a single response model, fitted onto pooled sample of cases, were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).</p></li>
+<li><p><strong>pooled</strong> is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). <em>Pooled</em> a single response model, fitted onto pooled sample of cases were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).</p></li>
 <li><p><strong>strict</strong> is a multigroup graded response model, where all response model parameters are held equal between compared groups (Tse et al., 2024), including the scale factors.</p></li>
 <li><p><strong>scalar</strong> is a multigroup graded response model, where all response model parameters are held equal among groups, with the exemption of scale factors. It follows model specifications described in Svetina et al.&nbsp;(2020, proposition 7).</p></li>
 <li><p><strong>configural</strong> is a multigroup graded response model, where thresholds are held common among the compared countries (i.e., threshold invariance). Is the baseline model for a model building sequence for assesing model based measurement invariance (Wu &amp; Estabrook, 2016). It follows model specifications described in Svetina et al.&nbsp;(2020, proposition 4).</p></li>
 <li><p><strong>base</strong> is a a multigroup graded response model, where all response model parameters are freely estimated among the compare groups.</p></li>
 </ul>
-<p>Simulations studies from Rutkowski &amp; Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA &lt; .055 serves as a rule of thumb to select well fitting response models with invariant parameters among the compare groups.</p>
+<p>Simulations studies from Rutkowski &amp; Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA &lt; .055 serves as a rule of thumb to select well fitting response models with invariant parameters among compare groups.</p>
 <p>To fit the following models we use as inputs:</p>
 <ul>
 <li>data_responses <a href="https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&amp;dl=1"><code>data_ex1.rds</code></a></li>
@@ -897,7 +897,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="additional-examples" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="additional-examples"><span class="header-section-number">5.4</span> Additional examples</h2>
-<p>The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other with more realistic characteristics. One example with three countries, were is possible to see that three countries do not obtained strict invariance (example with “Sense of School Belonging” for three countries). And a third example of a template based workflow, where we procede with a full fledge item analysis report including all participating countries (example with “Bullying Scale” for all participating countries).</p>
+<p>The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other with more realistic examples. One example with three countries, were is possible to see that three countries do not obtained strict invariance (example with “Sense of School Belonging” for three countries). And a third example of a template based workflow, where we procede with a full fledge item analysis report including all participating countries (example with “Bullying Scale” for all participating countries).</p>
 <ul>
 <li>Example with “Sense of School Belonging” for three countries
 <ul>

@@ -1,6 +1,6 @@
 # Intended use
 
-The final section of these guidelines outlines the intended use of the alignment optimization library and emphasizes the responsibilities of the researcher in employing this tool. The primary goal of the library is to streamline and accelerate the process of generating results for multiple groups and item scales. By automating repetitive analytical tasks, the library facilitates the production of key outputs necessary for assessing the fit or misfit of measurement invariance models across various contexts.
+In this final section of the guidelines, we outlined the intended use of the library. We emphasize the responsibilities of the researcher in employing this tool. The primary goal of the library is to streamline and accelerate the process of generating results for multiple groups comparisons on item scales. By automating repetitive analytical tasks, the library facilitates the production of key outputs necessary for assessing the fit or misfit of measurement invariance models across various groups.
 
 However, it is crucial to underscore that the library is not a substitute for sound judgment and expertise of the researcher and user. While it efficiently produces the primary results needed for evaluation, it does not draw definitive conclusions regarding whether models meet specific thresholds or satisfy measurement invariance criteria. This critical interpretive step remains the responsibility of the researcher and the library user, who must apply their expertise to analyze and contextualize the findings appropriately.
 

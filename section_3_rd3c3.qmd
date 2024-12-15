@@ -8,13 +8,13 @@
 
 ## `rd3c3` as a collection of wrappers
 
-The `library(rd3c3)` is a collection of wrapper functions (Stanton, 2017) that helps to streamline the task of genereting code to fit different response model specifications. Wrapper functions are a way to call more complex functions and code, into a simpler user interface. The main aim of the library is to ease the coding time needed when assess measurement invariance of polytomous batteries of items, from background questionnaires of large scale assessment studies. The different model specifications follow Wu & Estabrook (2014), Svetina, Rutkowski & Rutkowski (2020) and Tse, Lai & Chang (2024) recommendations to fit different multigroup models of the graded response model with probit link, to fit strict, scalar, common threshold and base (i.e., descriptive) multigroup models. Moreover, the library also contain functions to apply aligment methods onto the same response model among groups. It relies on `MplusAutomation` (Hallquist & Wiley, 2018), to fit response models using Mplus (Muthén & Muthén, 2017), so all fitted models can take into account sample design features of large scale assessment studies such as stratification variables, clustering variables, and survey weights (e.g.., Stapleton, 2013).
+The `library(rd3c3)` is a collection of wrapper functions (Stanton, 2017) that helps to streamline the task of genereting code to fit different response model specifications. Wrapper functions are a way to call more complex functions and code into a simpler user interface. The main aim of the library is to ease the coding time needed when assessing measurement invariance of polytomous batteries of items from background questionnaires of large scale assessment studies. The different model specifications follow Wu & Estabrook (2014), Svetina, Rutkowski & Rutkowski (2020) and Tse, Lai & Chang (2024) recommendations to fit different multigroup models of the graded response model with probit link, to fit strict, scalar, common threshold and base (i.e., descriptive) multigroup models. Moreover, the library also contain functions to apply alignment methods onto the same response model among groups. It relies on `MplusAutomation` (Hallquist & Wiley, 2018), to fit response models using Mplus (Muthén & Muthén, 2017), so all fitted models can take into account sample design features of large scale assessment studies such as stratification variables, clustering variables, and survey weights (e.g.., Stapleton, 2013).
 
-The handler name of the library is `rd3c3`, and stems from the research development call number 3 (rd3), for cross cultural comparison (c3).
+The handler name of the library is `rd3c3`. This handler stems from the research development call number 3 (rd3), focused on cross cultural comparison (c3).
 
 ## Code applicable to a set of items
 
-Most of the wrapper functions included in `library(rd3c3)` are not intended to be use onto sole objects, such as vectors or data frames. These are design to be fitted onto a set of elements, define in a table. Once the table, which we call generally `scale_info`, is filled in and called into the R session, the wrapper functions can resolve which items are subject to an analysis, within a define data object a particular data frame. We illustrate the general logic of the wrapper functions with the following diagram.
+Most of the wrapper functions included in `library(rd3c3)` are not intended to be use onto sole objects, such as vectors or data frames. These are design to be fitted onto a set of elements, define in a table. Once the table, which we call generally `scale_info`, is filled-in and is called into the R session, the wrapper functions can resolve which items are subject to an analysis, within a define data object a particular data frame. We illustrate the general logic of the wrapper functions with the following diagram.
 
 ```{r echo = FALSE, out.width = '100%', fig.retina = 2, fig.cap = 'Figure 2: wrapper function logic'}
 
@@ -29,10 +29,10 @@ knitr::include_graphics(paste0('figure_2_wrapper_logic.png'))
 For the wrapper functions to work, one needs to provide:
 
 -   a `scale_info` table
--   to specify within the table the `data_file` name with responses of interest
+-   to specify within the table the `data_file` name with the responses of interest
 -   choose a particular scale, via a `scale_id`
 
-As such, different wrapper functions have the same arguments in the following form:
+As such, the library contains different wrapper functions that have the same arguments. These arguments usually present the following form:
 
 ```{r, echo = TRUE, eval = FALSE, warning=FALSE, message = FALSE}
 #| code-fold: false
@@ -50,13 +50,13 @@ This is the case for different functions within `rd3c3`. For example, to name a 
 -   `rd3c3::get_descriptives()`
     -   is a wrapper function to produce nominal descriptives of items
 -   `rd3c3::missing_summary()`
-    -   it generates a summary of missing data across items, distinguising complete, partial and missing response patterns by observations
+    -   it generates a summary of missing data across items, distinguishing complete, partial and missing response patterns by observations
 -   `rd3c3::fit_grm2()`
     -   is a wrapper function that fits a graded response model with probit link onto a set of items declared in the `scale_info` table
 -   `rd3c3::ctt_table()`
-    -   it produces classical test theory statistics such as biserial correlatiosn and alpha if deleted for set of items declared in the `scale_info` table
+    -   it produces classical test theory statistics such as biserial correlations and alpha if deleted for set of items declared in the `scale_info` table
 
-For example, a the `rd3c3::get_descriptives()` function generates item descriptives including means, standard deviations, and histograms; and instead of being applicable to a matrix of responses is applied onto a whole data object. Thanks to the additional arguments included in the wrapper function, the code is able to select the items that are indexed with a `scale_id` number within the `scale_info` table. Thus, just by specifing the desired `scale_id` the user can get the results for these collection of items contained in a particular data file.
+For example, the `rd3c3::get_descriptives()` function generates item descriptives including means, standard deviations, and histograms; and instead of being applicable to a matrix of responses is applied onto a whole data object. Thanks to the additional arguments included in the wrapper function, the code is able to select the items that are indexed with a `scale_id` number within the `scale_info` table. Thus, just by specifing the desired `scale_id` the user can get the results for these collection of items contained in a particular data file.
 
 ```{r, echo = TRUE, eval = TRUE, warning=FALSE, message = FALSE}
 #| code-fold: true
@@ -124,7 +124,7 @@ The generated results are the descriptives of items BSBG13A, BSBG13B, BSBG13C, B
 
 The `library(rd3c3)` is intended to produce **item analys reports** of polytomous scales, in the spirit of dynamic reports (Xie, 2017). These are reproducible statistical analysis, that fills-in a define template. For any `scale_id`, a collection of items, one can generate an **item analys report** that include different sets of results.
 
-This is in stark contrast to a *manually coded workflow*, where the user needs to code ever function to set of specific items within a data frame, many times to build a single item analysis report to every scale. In comparison, a *template based workflow* already contains an opinionated set of analysis (Parker, 2017) selected with a purpose. In this case, to make judgments of quality of scale scores in terms of unidimensionality, reliability, comparability and inference limitations. The following diagram depicts the contrast between these two manners to reach the set of intended item analysis reports.
+This is in stark contrast to a *manually coded workflow*, where the user needs to code every function to a set of specific items within a data frame, many times to build a single item analysis report to every scale. In comparison, a *template based workflow* already contains an opinionated set of analysis (Parker, 2017) selected with a purpose. In this case, to make judgments of the quality of scale scores in terms of unidimensionality, reliability, comparability and inference limitations. The following diagram depicts the contrast between these two manners to reach the set of intended item analysis reports.
 
 ```{r echo = FALSE, out.width = '100%', fig.retina = 2, fig.cap = 'Figure 3: wrapper function logic within a dynamic report'}
 
@@ -136,13 +136,13 @@ knitr::include_graphics(paste0('figure_3_report_logic.png'))
 
 ```
 
-In the *manually coded workflow* the user needs to code each set of expected results for each set of items. While in the second workflow, the *template based workflow*, the user just needs to choose the respective `scale_id` and can get the intended **item analys reports**.
+In the *manually coded workflow* the user needs to code each set of analysis for each set of items. While in the second workflow, the *template based workflow*, the user just needs to choose the respective `scale_id` and can get the intended **item analys reports** that should be already planned.
 
 The logic of a template is that allows a user to get a series of results regarding the responses to a collection of items that are intended to measure a known attribute (i.e., a construct). This templates includes a selection of the different results a researcher can use to make judgements regarding the quality of a total score from polytomous items scale.
 
-A template for assesing the quality of scale scores should follow different design data analysis principles such as reproducibility and exhaustivity (McGowan et al., 2023). This template should be reproducible in the sense that other user, with the same data file, library, and needed software (i.e., Mplus). Thus, such a template should be able to get the same results present in a generated report. Ideally a template for item analysis reports should follows the design principle of exhaustivity, in the sense of including different results that helps to make a judgment regarding the quality of the total score one can produce with the responses to a set of indicators. Using `library(rd3c3)` the user can include results from a graded response models, under different model specifications (i.e., strict, scalar, configural, base), alignment methods for graded response models, and partial credit model for item fit.
+A template for assesing the quality of scale scores should follow different design data analysis principles such as reproducibility and exhaustivity (McGowan et al., 2023). This template should be reproducible in the sense that other user, with the same data file, library, and needed software (i.e., Mplus), should reach the same results. Thus, such a template should be able to get the same results present in a generated report. Ideally a template for item analysis reports should follows the design principle of exhaustivity, in the sense of including different results that helps to make a judgment regarding the quality of the total score one can produce with the responses to a set of indicators. Using `library(rd3c3)` the users can include results from a graded response models, under different model specifications (i.e., strict, scalar, configural, base), and alignment methods for graded response models.
 
-In essence, to build a dynamic **item analysis report**, the user needs to define the `scale_info`, define the `data_responses` of interest, and by using `library(rd3c3)` within a define **template** where the user includes all the statistical analysis relevant for its purpose. As a whole, the user can generate dynamic results reports per scale. The following diagram summarize the minimal elements to produce these dynamic reports.
+In essence, to build a dynamic **item analysis report**, the user needs to define the `scale_info`, define the `data_responses` of interest, and by using `library(rd3c3)` within a define **template** the user can include all the statistical analysis relevant for its purpose. As a whole, the user can generate dynamic results reports per scale. The following diagram summarize the minimal elements to produce these dynamic reports.
 
 ```{r echo = FALSE, out.width = '100%', fig.retina = 2, fig.cap = 'Figure 4: dynamic reports'}
 
@@ -169,7 +169,7 @@ The main pieces of evidence that `librar(rd3c3)` can produce for item analysis r
 
 **Comparability** among participating countries is assess via the results of the model based measurement invariance results (Wu & Estabrook, 2016; Svetina, Rutkowski & Rutkowski, 2020; Tse, Lai & Chang, 2024), and the complementary results of the alignment analysis results (Muthén & Asparouhov, 2014).
 
-**Inference limitations** can be made based on an holistic judgment of previous results, regarding to which locations of the latent continuum the scale score is more informative, via inspection of the person item map, and the distribution of standard errors of the theta realizations of the response model. For example if the distribution of item location is concentraded in one of the tails a researcher can identify possible ceiling or floor effects of the scale (e.g., Carrasco, Rutkowski, and Rutkowski, 2023). Moreover, the item analysis reports provides results of measurement invariance and alignment analysis providing information regarding the tenability of assuming a common response model being held equal among the compared groups. Thus, the researcher can spot scales scores where the comparison among groups may not be guarantee and further research is needed to isolate points of support for comparisons, by iterating the decisions on item and group selections and exclusions.
+**Inference limitations** can be made based on an holistic judgment of previous results, regarding to which locations of the latent continuum the scale score is more informative, via inspection of the person item map, and the distribution of standard errors of the theta realizations of the response model. For example if the distribution of item location is concentraded in one of the tails a researcher can identify possible ceiling or floor effects of the scale (e.g., Carrasco, Rutkowski, and Rutkowski, 2023). Moreover, the item analysis reports provides results of measurement invariance and alignment methods providing information regarding the tenability of assuming a common response model among the compared groups. Thus, the researcher can spot scales scores where the comparison among groups may not be guarantee and further research is needed. Further research could isolate points of support for comparisons, by iterating the decisions on item and group selections and exclusions.
 
 In the following section (section 4), we illustrate the application of the `library(rd3c3)` to produce invariance analysis, and build an **item analysis report** with the described characteristics.
 

@@ -5,7 +5,7 @@
 -   We use data from TIMSS 2019, from the student background questionnaire.
     -   In particular we are using student responses to the items of the scale "Sense of School Belonging", from Chile and England.
     -   The data file includes 4115 students from Chile, and 3365 students from England, from 8th grade
-    -   We are using a taylored made data file, where we include specific clustering and survey design variables:
+    -   We are using a tailor-made data file where we include specific clustering and survey design variables:
         -   id_i = unique id number for students
         -   id_j = unique id number for schools
         -   id_s = unique id number for stratification factors (i.e., JKZONES)
@@ -41,7 +41,7 @@ devtools::install_github(
 
 Model based invariance analysis includes five model specifications:
 
--   **pooled** is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). Is a single response model, fitted onto pooled sample of cases, were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).
+-   **pooled** is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). *Pooled* a single response model, fitted onto pooled sample of cases were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).
 
 -   **strict** is a multigroup graded response model, where all response model parameters are held equal between compared groups (Tse et al., 2024), including the scale factors.
 
@@ -51,7 +51,7 @@ Model based invariance analysis includes five model specifications:
 
 -   **base** is a a multigroup graded response model, where all response model parameters are freely estimated among the compare groups.
 
-Simulations studies from Rutkowski & Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA \< .055 serves as a rule of thumb to select well fitting response models with invariant parameters among the compare groups.
+Simulations studies from Rutkowski & Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA \< .055 serves as a rule of thumb to select well fitting response models with invariant parameters among compare groups.
 
 To fit the following models we use as inputs:
 
@@ -406,7 +406,7 @@ The end product of this procedure can be inspected in the following file [`guide
 
 ## Additional examples
 
-The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other with more realistic characteristics. One example with three countries, were is possible to see that three countries do not obtained strict invariance (example with "Sense of School Belonging" for three countries). And a third example of a template based workflow, where we procede with a full fledge item analysis report including all participating countries (example with "Bullying Scale" for all participating countries).
+The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other with more realistic examples. One example with three countries, were is possible to see that three countries do not obtained strict invariance (example with "Sense of School Belonging" for three countries). And a third example of a template based workflow, where we procede with a full fledge item analysis report including all participating countries (example with "Bullying Scale" for all participating countries).
 
 -   Example with "Sense of School Belonging" for three countries
     -   data: [`data_example.rds`](https://www.dropbox.com/scl/fi/m7s8qb1k618bihu5jmcou/data_example.rds?rlkey=mo9iylrj1td0hjsqlq0zcemv9&dl=1)
