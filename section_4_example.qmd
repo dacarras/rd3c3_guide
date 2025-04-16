@@ -49,9 +49,9 @@ Model based invariance analysis includes five model specifications:
 
 -   **threshold** is a multigroup graded response model, where thresholds are held common among the compared countries (i.e., threshold invariance). Is the baseline model for a model building sequence for assessing model-based measurement invariance (Wu & Estabrook, 2016). It follows model specifications described in Svetina et al. (2020, proposition 4).
 
--   **configural**is a multigroup graded response model, where all measurement model parameters are freely estimated among the compare groups, while holding latent factor means fix to zero, and factor variances fixed to one across groups.
+-   **configural** is a multigroup graded response model, where all measurement model parameters are freely estimated among the compare groups, while holding latent factor means fix to zero, and factor variances fixed to one across groups.
 
-Simulations studies from Rutkowski & Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA < .055 serves as a rule of thumb to select well-fitting measurement models with invariant parameters among compared groups.
+Simulations studies from Rutkowski & Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA \< .055 serves as a rule of thumb to select well-fitting measurement models with invariant parameters among compared groups.
 
 To fit the following models we use as inputs:
 
