@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,13 +47,7 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -62,7 +56,6 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -78,12 +71,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./section_2_partial.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partial invariance</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./section_2_partial.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partial invariance</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -93,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Guidelines for measurement invariance and aligment methods using library(rd3c3)</a> 
@@ -151,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -180,22 +173,22 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
-
 </header>
-
 
 <p>Partially invariant models are model specifications that allows for some item indicators parameters to vary freely, while still having enough common parameters in the measurement model among groups. These models offer a way to generalize findings based on the invariant parameters while excluding those that exhibit non-invariance in the results generalization (Meredith, 1993; Millsap, 2011). Hence, the name partially invariant.</p>
 <p>These models allow researchers to identify group differences or treatment effects reliably for responses to items that remain consistent across groups, while keeping non invariant indicators in the measurement model. For instance, in case of causal inference exercises such as experiments and intervention studies, where control and treated groups are compared, if a treatment effect holds equally for 10 out of 12 items within a scale, assertions between treated and non-treated can be made safely for these 10 items, while not making such claims onto the two non-invariant indicators (e.g., Gilbert, 2024).</p>
 <p>However, if the number of non-invariant parameters in the measurement models is too large, then is less credible the ability of making claims that are applicable to all compared groups across all items. As a point reference, Muthén, &amp; Asparouhov (2014) suggest that if 75% of the parameters between groups are held common (while 25% of the response parameters are non-invariant), latent means comparisons between groups are of good enough quality. Yet, such a threshold can be put to the test with Monte Carlo studies for the speficities of a measurement model, while taking into account the number of groups being compared (Muhen &amp; Asparouhov, 2014, p3), and the research purpose.</p>
 <p>There are few caveats to consider regarding partially invariant models when group comparisons are of interest. If non-invariant items are excluded, this selective exclusion can alter the meaning of the generated score. Exclusion of non-invariant items can narrow the scope of the attribute of interest. For example, if one has three groups, and twelve items, is possible to have a scenario in which the measurement model is invariant for two of the three groups. And simultaneously, the measurement equivalence could hold with only four out of the twelve items for the three groups. As such, researchers can have the dilemma of narrowing the amount of indicators at the cost of reliability and narrowing the meaning of the generated score; and compare the three groups. Or, to do comparison across all the items for only two of the three groups. Yet, with partially invariant model while is allowed to keep all indicators in the measurement model, the meaning of the group differences would partially generalize to the responses where the measurement model parameters are held equal. Restricting the comparison to only the common items among the three groups can restrict the scope of the intended interpretations. This a central problem for cross-cultural studies, where including more diverse groups can augment the chances of non-comparability (Van De Vijver &amp; Matsumoto, 2011). In essence, partially invariant models can pose interpretive challenges. The treatment effects or group differences identified in these models may not fully represent the intended construct’s complexity. Researchers must exercise caution in claiming generalizability across indicators, ensuring transparency in reporting the extent of invariance and acknowledging the limitations of their results (Fischer et al., 2019; Van de Schoot et al., 2012).</p>
 <p>In practical terms, the process of implementing partially invariant models is time-consuming and often requires significant manual intervention (Svetina et al., 2020; Robitzsch &amp; Lüdtke, 2023). Arranging and adjusting the measurement model to exclude non-invariant items, or to freely estimate measurement model indicators between partially comparable groups, demands meticulous attention to detail and an iterative testing process. As a whole, is a procedure which can hinder efficiency. This labor-intensive aspect of the method underscores the need for more streamlined analytical tools or automated procedures to facilitate its application in large-scale studies.</p>
-<p>Alignment methods (Muthén &amp; Asparouhov, 2014; Asparouhov &amp; Muthén, 2014; Asparouhov &amp; Muthén, 2022) are a collection of procedures which are helpful in finding the least discrepant solution among groups for a given measurement model. This method searches for an optimal solution where the amount of discrepant parameters (i.e., non-invariant) is minimized. Although is a procedure which helps to search partially invariant solutions, the resulting partially invariant solutions are conditional to the selection algorithm (Pokropek, Lüdtke, &amp; Robitzsch, 2020). Thus, is not a method which would yield non debatable partially invariant solutions, but plausible partially invariant solutions. As such, is the researcher who would need to make a judgment call regarding if the reached solution is a useful model specification for their purposes, considering its limitations.</p>
+<p>Alignment methods (Muthén &amp; Asparouhov, 2014; Asparouhov &amp; Muthén, 2014; Asparouhov &amp; Muthén, 2022) are a collection of procedures which are helpful in finding the least discrepant solution among groups for a given measurement model. This method searches for an optimal solution where the number of discrepant parameters (i.e., non-invariant) is minimized. Alignment is an approach that’s becoming a popular method for invariance studies in large-scale assessment research literature, with applications in different studies including Trends in International Mathematics and Science Study (TIMSS) (e.g., Yiğiter, 2024), International Civic and Citizenship Education Study (ICCS) (e.g., Ziemes, 2024), Program for International Student Assessment (PISA) (e.g., Wurster, 2022), Teaching and Learning International Survey (TALIS) (e.g., Fang et al., 2025), to name a few. Interested readers can consult Sandoval-Hernandez et al.&nbsp;(2025) for a scoping review on the topic.</p>
+<p>Although is a procedure which helps to search partially invariant solutions, the resulting partially invariant solutions are conditional to the selection algorithm (Pokropek, Lüdtke, &amp; Robitzsch, 2020). Thus, is not a method which would yield non debatable partially invariant solutions, but plausible partially invariant solutions. As such, is the researcher who would need to make a judgment call regarding if the reached solution is a useful model specification for their purposes, considering its limitations.</p>
 <p>In conclusion, while partially invariant models offer a practical approach to addressing measurement invariance challenges, their limitations highlight the importance of careful interpretation and methodological rigor. Aligment methods offer an interesting tool to search for partially invariant model specification in cases where strict and scalar invariance is not held. Apart from aligment methods, there are other alternatives that are aim at addressing the challenges of comparing many groups such as bayesian aproximate invariance, measurement invariance via multilevel models, mixture multigroup factor analysis among others (see Leitgöb et al., 2023). These other alternatives, besides aignment methods are out of the scope of the present guidelines</p>
 <p>In the following section (section 3), we describe what is in the <code>library(rd3c3)</code>, and how it can help to fit model-based measurement invariance onto graded response models, and how it helps to fit alignment method optimization onto the same measurement models.</p>
 <section id="references" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="references"><span class="header-section-number">3.1</span> References</h2>
 <p>Asparouhov, T., &amp; Muthén, B. (2014). Multiple-group factor analysis alignment. Structural Equation Modeling: A Multidisciplinary Journal, 21(4), 495–508. https://doi.org/10.1080/10705511.2014.919210</p>
 <p>Asparouhov, T., &amp; Muthén, B. (2022). Multiple group alignment for exploratory and structural equation models. Structural Equation Modeling: A Multidisciplinary Journal, 1–23. https://doi.org/10.1080/10705511.2022.2127100</p>
+<p>Fang, G., Teo, T., &amp; Chan, P. W. K. (2025). Testing for approximate measurement invariance of instructional quality in the Teaching and Learning International Survey (TALIS) 2018. Humanities and Social Sciences Communications, 12(1), 520. https://doi.org/10.1057/s41599-025-04870-4</p>
 <p>Fischer, J., Praetorius, A. K., &amp; Klieme, E. (2019). The impact of linguistic similarity on cross-cultural comparability of students’ perceptions of teaching quality. Educational Assessment, Evaluation and Accountability, 31, 201–220.</p>
 <p>Gilbert, J. B. (2024). Modeling item-level heterogeneous treatment effects: A tutorial with the glmer function from the lme4 package in R. Behavior Research Methods, 56(5), 5055–5067. https://doi.org/10.3758/s13428-023-02245-8</p>
 <p>Leitgöb, H., Seddig, D., Asparouhov, T., Behr, D., Davidov, E., De Roover, K., Jak, S., Meitinger, K., Menold, N., Muthén, B., Rudnev, M., Schmidt, P., &amp; van de Schoot, R. (2023). Measurement invariance in the social sciences: Historical development, methodological challenges, state of the art, and future perspectives. Social Science Research, 110(October 2022). https://doi.org/10.1016/j.ssresearch.2022.102805</p>
@@ -207,6 +200,9 @@ ul.task-list li input[type="checkbox"] {
 <p>Svetina, D., Rutkowski, L., &amp; Rutkowski, D. (2020). Multiple-group invariance with categorical outcomes using updated guidelines: An illustration using Mplus and the lavaan/semTools packages. Structural Equation Modeling: A Multidisciplinary Journal, 27(1), 111–130. https://doi.org/10.1080/10705511.2019.1602776</p>
 <p>Van de Schoot, R., Lugtig, P., &amp; Hox, J. (2012). A checklist for testing measurement invariance. European Journal of Developmental Psychology, 9(4), 486–492. https://doi.org/10.1080/17405629.2012.686740</p>
 <p>Van De Vijver, F.J.R., Matsumoto, D. (2011) Introduction to the methodological issues associated with cross-cultural research. In: Matsumoto, D., van de Vijver, F.J.R. (Eds.), Cross-Cultural Research Methods in Psychology, 1st ed.,. Cambridge University Press, pp.&nbsp;1–14.</p>
+<p>Wurster, S. (2022). Measurement invariance of non-cognitive measures in TIMSS across countries and across time. An application and comparison of Multigroup Confirmatory Factor Analysis, Bayesian approximate measurement invariance and alignment optimization approach. Studies in Educational Evaluation, 73, 101143. https://doi.org/10.1016/j.stueduc.2022.101143</p>
+<p>Yiğiter, M. S. (2024). Cross-National Measurement of Mathematics Intrinsic Motivation: An Investigate of Measurement Invariance with MG-CFA and Aligment Method Across Fourteen Countries. Journal of Theoretical Educational Science, 17(1), 1–27. https://doi.org/10.30831/akukeg.1207350</p>
+<p>Ziemes, J. F. (2024). Political trust among European youth: Evaluating multi -dimensionality and cross-national measurement comparability. Studies in Educational Evaluation, 73, 101321. https://doi.org/10.1016/j.stueduc.2023.101321</p>
 
 
 </section>
@@ -291,9 +287,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -303,17 +300,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -326,125 +314,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -488,7 +357,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -514,32 +382,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -601,18 +443,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./section_1_response_model.html" class="pagination-link  aria-label=" &lt;span="" model&lt;="" span&gt;"="">
+      <a href="./section_1_response_model.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Response model</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./section_3_rd3c3.html" class="pagination-link" aria-label="<span class='chapter-number'>4</span>&nbsp; <span class='chapter-title'>Library overview</span>">
+      <a href="./section_3_rd3c3.html" class="pagination-link">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Library overview</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-
 
 
 
