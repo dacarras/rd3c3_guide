@@ -5,7 +5,7 @@ project:
 book:
   title: "Guidelines for measurement invariance and aligment methods using library(rd3c3)"
   author: "Sandoval-Hernández, Carrasco & Eryılmaz"
-  date: "12/14/2024"
+  date: "04/16/2025"
   chapters:
     - index.qmd
     - introduction.qmd
@@ -20,6 +20,7 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
-
+  docx:
+    default
 editor: visual
 

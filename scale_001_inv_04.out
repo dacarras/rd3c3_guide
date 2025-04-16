@@ -1,6 +1,6 @@
 Mplus VERSION 8.11 (Mac)
 MUTHEN & MUTHEN
-12/16/2024  12:56 PM
+04/16/2025   5:36 AM
 
 INPUT INSTRUCTIONS
 
@@ -134,7 +134,7 @@ INPUT INSTRUCTIONS
 
   SAVEDATA:
 
-  FILE = scale_001_inv_01_scores.dat;
+  FILE = scale_001_inv_04_scores.dat;
   SAVE = FSCORES;
 
   PLOT:
@@ -1700,8 +1700,8 @@ The following plots are available:
   Information curves
   Measurement parameter plots
 
-     Beginning Time:  12:56:36
-        Ending Time:  12:56:37
+     Beginning Time:  05:36:03
+        Ending Time:  05:36:04
        Elapsed Time:  00:00:01
 
 

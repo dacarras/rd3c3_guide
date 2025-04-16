@@ -128,7 +128,7 @@ SVALUES
 
 SAVEDATA:
  
-FILE = scale_001_inv_01_scores.dat;
+FILE = scale_001_inv_04_scores.dat;
 SAVE = FSCORES;
 
 PLOT:

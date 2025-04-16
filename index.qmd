@@ -34,7 +34,7 @@ devtools::install_github(
 
 ## How to cite the current document
 
-Sandoval-Hernández, A.; Carrasco, D; & Eryilmaz, N. (2024). Guidelines for measurement invariance and aligment methods using `library(rd3c3)`. figshare. Software. https://doi.org/10.6084/m9.figshare.28028564
+Sandoval-Hernández, A.; Carrasco, D; & Eryilmaz, N. (2025). Guidelines for measurement invariance and aligment methods using `library(rd3c3)`. figshare. Software. <https://doi.org/10.6084/m9.figshare.28028564.v1>
 
 ## Acknowledgement
 

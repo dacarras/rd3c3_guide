@@ -41,17 +41,17 @@ devtools::install_github(
 
 Model based invariance analysis includes five model specifications:
 
--   **pooled** is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). *Pooled* a single response model, fitted onto pooled sample of cases were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).
+-   **pooled** is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). *Pooled* a single measurement model, fitted onto pooled sample of cases were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).
 
--   **strict** is a multigroup graded response model, where all response model parameters are held equal between compared groups (Tse et al., 2024), including the scale factors.
+-   **strict** is a multigroup graded response model, where all response model parameters are held equal between compared groups, beside latent means for groups (Tse et al., 2024), while including the scale factors as part of the model.
 
--   **scalar** is a multigroup graded response model, where all response model parameters are held equal among groups, with the exemption of scale factors. It follows model specifications described in Svetina et al. (2020, proposition 7).
+-   **scalar** is a multigroup graded response model, where all response model parameters are held equal among groups, with the exemption of scale factors. It follows model specifications described in Svetina et al. (2020, proposition 7), where scale factors are fix to one for the reference group, and let to vary free on the rest of the groups in the comparison.
 
--   **configural** is a multigroup graded response model, where thresholds are held common among the compared countries (i.e., threshold invariance). Is the baseline model for a model building sequence for assesing model based measurement invariance (Wu & Estabrook, 2016). It follows model specifications described in Svetina et al. (2020, proposition 4).
+-   **threshold** is a multigroup graded response model, where thresholds are held common among the compared countries (i.e., threshold invariance). Is the baseline model for a model building sequence for assessing model-based measurement invariance (Wu & Estabrook, 2016). It follows model specifications described in Svetina et al. (2020, proposition 4).
 
--   **base** is a a multigroup graded response model, where all response model parameters are freely estimated among the compare groups.
+-   **configural**is a multigroup graded response model, where all measurement model parameters are freely estimated among the compare groups, while holding latent factor means fix to zero, and factor variances fixed to one across groups.
 
-Simulations studies from Rutkowski & Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA \< .055 serves as a rule of thumb to select well fitting response models with invariant parameters among compare groups.
+Simulations studies from Rutkowski & Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA < .055 serves as a rule of thumb to select well-fitting measurement models with invariant parameters among compared groups.
 
 To fit the following models we use as inputs:
 
@@ -62,8 +62,8 @@ To fit the following models we use as inputs:
     -   `rd3c3::fit_grm2` for the pooled model
     -   `rd3c3::fit_grm2_m01_strict` for the strict model
     -   `rd3c3::fit_grm2_m02_scalar` for the scalar model
-    -   `rd3c3::fit_grm2_m03_configural` for the configural model
-    -   `rd3c3::fit_grm2_m04_base` for the base model (i.e., descriptive model)
+    -   `rd3c3::fit_grm2_m03_threshold` for the threshold model
+    -   `rd3c3::fit_grm2_m04_config` for the base model (i.e., descriptive model)
 
 In the following section we include code (*folded*) to produce the invariance model fit indexes table (see Table 1).
 
@@ -167,11 +167,11 @@ inv_2 <- rd3c3::silent(
            )
 
 # -----------------------------------------------
-# configural
+# threshold
 # -----------------------------------------------
 
 inv_3 <- rd3c3::silent(
-           rd3c3::fit_grm2_m03_config(
+           rd3c3::fit_grm2_m03_threshold(
            data = data_responses, 
            scale_num = scale_id, 
            scale_info = scales_data,
@@ -182,11 +182,11 @@ inv_3 <- rd3c3::silent(
            )
 
 # -----------------------------------------------
-# base
+# configural
 # -----------------------------------------------
 
 inv_4 <- rd3c3::silent(
-           rd3c3::fit_grm2_m04_base(
+           rd3c3::fit_grm2_m04_config(
            data = data_responses, 
            scale_num = scale_id, 
            scale_info = scales_data,
@@ -203,8 +203,8 @@ inv_4 <- rd3c3::silent(
 fit_0 <- rd3c3::get_inv_fit(inv_0, model_name = 'pooled')
 fit_1 <- rd3c3::get_inv_fit(inv_1, model_name = 'strict')
 fit_2 <- rd3c3::get_inv_fit(inv_2, model_name = 'scalar')
-fit_3 <- rd3c3::get_inv_fit(inv_3, model_name = 'config')
-fit_4 <- rd3c3::get_inv_fit(inv_4, model_name = 'base')
+fit_3 <- rd3c3::get_inv_fit(inv_3, model_name = 'threshold')
+fit_4 <- rd3c3::get_inv_fit(inv_4, model_name = 'configural')
 
 # -----------------------------------------------
 # general table
@@ -231,13 +231,13 @@ knitr::kable(.,
 
 ```
 
-> Note: pooled = is the response model fitted onto the pooled sample. strict = is a multigroup response model with common thresholds, common loadings, and a common scale. This response model suffice mean score comparisons (Tse et al., 2024). scalar = is a multigroup esponse model with common thresholds, common loadings, and free scales for each item. This models supports latent mean comparisons (Tse et al., 2024). config = is a multigroup response model with common thresholds. base = is a multigroup descriptive model where all response model parameter are free to vary. Metric model specification is not identified under graded response models (Wu & Estabrook, 2016), thus metric solution is not included. A RMSEA of .055 or less has been found to be good threshold for fit for graded response models with many groups of 10 or 20 compared groups (see Rutkowski & Svetina, 2017).
+> Note: pooled = is the measurement model fitted onto the pooled sample. strict = is a multigroup measurement model with common thresholds, common loadings, and a common scale. This latent variable model suffices mean score comparisons (Tse et al., 2024). scalar = is a multigroup measurement model with common thresholds, common loadings, and free scales for each item. This model supports latent mean comparisons (Tse et al., 2024). threshold = is a multigroup measurement model with common thresholds. configural = is a multigroup descriptive model where all measurement model parameter are free to vary. Metric model specification is not identified under the graded response models (Wu & Estabrook, 2016), thus metric specifications are not included. A RMSEA of .055 or less has been found to be good threshold for fit for graded response models with many groups of 10 or 20 compared groups (see Rutkowski & Svetina, 2017).
 
 ### Alignment
 
-The aligment method is optimizing for the least discrepance response model parameters among the compared groups. Is fitting a graded response model with probit link, and using the most optimal group as a reference. We are using the statement `ALIGNMENT = FIXED(*);` within Mplus for these purposes. We rely on the *Measurement invariance explorer* (https://github.com/MaksimRudnev/MIE.package) to retrieve aligment results.
+The alignment method is optimizing for the least discrepant measurement model parameters among the compared groups. Is fitting a graded response model with probit link, and using the most optimal group as a reference. We are using the statement `ALIGNMENT = FIXED(*);` within Mplus for these purposes. We rely on the *Measurement invariance explorer* (https://github.com/MaksimRudnev/MIE.package) to retrieve aligment results.
 
-The following code (*folded*) is using as inputs:
+The following code (*folded*) is used as inputs:
 
 -   data_responses [`data_ex1.rds`](https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&dl=1)
 -   scale_info = [`guideline_scale_info_example.xlsx`](https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&dl=1)
@@ -406,7 +406,7 @@ The end product of this procedure can be inspected in the following file [`guide
 
 ## Additional examples
 
-The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other with more realistic examples. One example with three countries, were is possible to see that three countries do not obtained strict invariance (example with "Sense of School Belonging" for three countries). And a third example of a template based workflow, where we procede with a full fledge item analysis report including all participating countries (example with "Bullying Scale" for all participating countries).
+The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other data response files. One example with three countries, where is possible to see that three countries do not obtain strict invariance (example with "Sense of School Belonging" for three countries). And a third example of a template-based workflow, where we procede with a full fledge item analysis report including all participating countries (example with the "Bullying Scale" for all participating countries).
 
 -   Example with "Sense of School Belonging" for three countries
     -   data: [`data_example.rds`](https://www.dropbox.com/scl/fi/m7s8qb1k618bihu5jmcou/data_example.rds?rlkey=mo9iylrj1td0hjsqlq0zcemv9&dl=1)

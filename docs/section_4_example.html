@@ -276,13 +276,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="5.2.1" class="anchored" data-anchor-id="model-based-invariance-analysis"><span class="header-section-number">5.2.1</span> Model based invariance analysis</h3>
 <p>Model based invariance analysis includes five model specifications:</p>
 <ul>
-<li><p><strong>pooled</strong> is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). <em>Pooled</em> a single response model, fitted onto pooled sample of cases were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).</p></li>
-<li><p><strong>strict</strong> is a multigroup graded response model, where all response model parameters are held equal between compared groups (Tse et al., 2024), including the scale factors.</p></li>
-<li><p><strong>scalar</strong> is a multigroup graded response model, where all response model parameters are held equal among groups, with the exemption of scale factors. It follows model specifications described in Svetina et al.&nbsp;(2020, proposition 7).</p></li>
-<li><p><strong>configural</strong> is a multigroup graded response model, where thresholds are held common among the compared countries (i.e., threshold invariance). Is the baseline model for a model building sequence for assesing model based measurement invariance (Wu &amp; Estabrook, 2016). It follows model specifications described in Svetina et al.&nbsp;(2020, proposition 4).</p></li>
-<li><p><strong>base</strong> is a a multigroup graded response model, where all response model parameters are freely estimated among the compare groups.</p></li>
+<li><p><strong>pooled</strong> is a graded response model with probit link, including survey design variables (i.e., stratification factors, primary sampling unit and student survey weights) (e.g., Stapleton, 2013). <em>Pooled</em> a single measurement model, fitted onto pooled sample of cases were sampling weights have been scale to a common constant so including countries contributes equally to estimates (Gonzalez, 2012).</p></li>
+<li><p><strong>strict</strong> is a multigroup graded response model, where all response model parameters are held equal between compared groups, beside latent means for groups (Tse et al., 2024), while including the scale factors as part of the model.</p></li>
+<li><p><strong>scalar</strong> is a multigroup graded response model, where all response model parameters are held equal among groups, with the exemption of scale factors. It follows model specifications described in Svetina et al.&nbsp;(2020, proposition 7), where scale factors are fix to one for the reference group, and let to vary free on the rest of the groups in the comparison.</p></li>
+<li><p><strong>threshold</strong> is a multigroup graded response model, where thresholds are held common among the compared countries (i.e., threshold invariance). Is the baseline model for a model building sequence for assessing model-based measurement invariance (Wu &amp; Estabrook, 2016). It follows model specifications described in Svetina et al.&nbsp;(2020, proposition 4).</p></li>
+<li><p><strong>configural</strong>is a multigroup graded response model, where all measurement model parameters are freely estimated among the compare groups, while holding latent factor means fix to zero, and factor variances fixed to one across groups.</p></li>
 </ul>
-<p>Simulations studies from Rutkowski &amp; Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA &lt; .055 serves as a rule of thumb to select well fitting response models with invariant parameters among compare groups.</p>
+<p>Simulations studies from Rutkowski &amp; Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA &lt; .055 serves as a rule of thumb to select well-fitting measurement models with invariant parameters among compared groups.</p>
 <p>To fit the following models we use as inputs:</p>
 <ul>
 <li>data_responses <a href="https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&amp;dl=1"><code>data_ex1.rds</code></a></li>
@@ -293,8 +293,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>rd3c3::fit_grm2</code> for the pooled model</li>
 <li><code>rd3c3::fit_grm2_m01_strict</code> for the strict model</li>
 <li><code>rd3c3::fit_grm2_m02_scalar</code> for the scalar model</li>
-<li><code>rd3c3::fit_grm2_m03_configural</code> for the configural model</li>
-<li><code>rd3c3::fit_grm2_m04_base</code> for the base model (i.e., descriptive model)</li>
+<li><code>rd3c3::fit_grm2_m03_threshold</code> for the threshold model</li>
+<li><code>rd3c3::fit_grm2_m04_config</code> for the base model (i.e., descriptive model)</li>
 </ul></li>
 </ul>
 <p>In the following section we include code (<em>folded</em>) to produce the invariance model fit indexes table (see Table 1).</p>
@@ -398,11 +398,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>           )</span>
 <span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co"># configural</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co"># threshold</span></span>
 <span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
 <span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>inv_3 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">silent</span>(</span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>           rd3c3<span class="sc">::</span><span class="fu">fit_grm2_m03_config</span>(</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>           rd3c3<span class="sc">::</span><span class="fu">fit_grm2_m03_threshold</span>(</span>
 <span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> data_responses, </span>
 <span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>           <span class="at">scale_num =</span> scale_id, </span>
 <span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>           <span class="at">scale_info =</span> scales_data,</span>
@@ -413,11 +413,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>           )</span>
 <span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="co"># base</span></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="co"># configural</span></span>
 <span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
 <span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>inv_4 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">silent</span>(</span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>           rd3c3<span class="sc">::</span><span class="fu">fit_grm2_m04_base</span>(</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>           rd3c3<span class="sc">::</span><span class="fu">fit_grm2_m04_config</span>(</span>
 <span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>           <span class="at">data =</span> data_responses, </span>
 <span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>           <span class="at">scale_num =</span> scale_id, </span>
 <span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>           <span class="at">scale_info =</span> scales_data,</span>
@@ -434,8 +434,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>fit_0 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">get_inv_fit</span>(inv_0, <span class="at">model_name =</span> <span class="st">'pooled'</span>)</span>
 <span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>fit_1 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">get_inv_fit</span>(inv_1, <span class="at">model_name =</span> <span class="st">'strict'</span>)</span>
 <span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>fit_2 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">get_inv_fit</span>(inv_2, <span class="at">model_name =</span> <span class="st">'scalar'</span>)</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>fit_3 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">get_inv_fit</span>(inv_3, <span class="at">model_name =</span> <span class="st">'config'</span>)</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>fit_4 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">get_inv_fit</span>(inv_4, <span class="at">model_name =</span> <span class="st">'base'</span>)</span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>fit_3 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">get_inv_fit</span>(inv_3, <span class="at">model_name =</span> <span class="st">'threshold'</span>)</span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>fit_4 <span class="ot">&lt;-</span> rd3c3<span class="sc">::</span><span class="fu">get_inv_fit</span>(inv_4, <span class="at">model_name =</span> <span class="st">'configural'</span>)</span>
 <span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------------------------------------------</span></span>
 <span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="co"># general table</span></span>
@@ -507,7 +507,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">config</td>
+<td style="text-align: left;">threshold</td>
 <td style="text-align: right;">0.032</td>
 <td style="text-align: right;">1.00</td>
 <td style="text-align: right;">1.00</td>
@@ -517,7 +517,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">base</td>
+<td style="text-align: left;">configural</td>
 <td style="text-align: right;">0.044</td>
 <td style="text-align: right;">1.00</td>
 <td style="text-align: right;">0.99</td>
@@ -531,13 +531,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Note: pooled = is the response model fitted onto the pooled sample. strict = is a multigroup response model with common thresholds, common loadings, and a common scale. This response model suffice mean score comparisons (Tse et al., 2024). scalar = is a multigroup esponse model with common thresholds, common loadings, and free scales for each item. This models supports latent mean comparisons (Tse et al., 2024). config = is a multigroup response model with common thresholds. base = is a multigroup descriptive model where all response model parameter are free to vary. Metric model specification is not identified under graded response models (Wu &amp; Estabrook, 2016), thus metric solution is not included. A RMSEA of .055 or less has been found to be good threshold for fit for graded response models with many groups of 10 or 20 compared groups (see Rutkowski &amp; Svetina, 2017).</p>
+<p>Note: pooled = is the measurement model fitted onto the pooled sample. strict = is a multigroup measurement model with common thresholds, common loadings, and a common scale. This latent variable model suffices mean score comparisons (Tse et al., 2024). scalar = is a multigroup measurement model with common thresholds, common loadings, and free scales for each item. This model supports latent mean comparisons (Tse et al., 2024). threshold = is a multigroup measurement model with common thresholds. configural = is a multigroup descriptive model where all measurement model parameter are free to vary. Metric model specification is not identified under the graded response models (Wu &amp; Estabrook, 2016), thus metric specifications are not included. A RMSEA of .055 or less has been found to be good threshold for fit for graded response models with many groups of 10 or 20 compared groups (see Rutkowski &amp; Svetina, 2017).</p>
 </blockquote>
 </section>
 <section id="alignment" class="level3" data-number="5.2.2">
 <h3 data-number="5.2.2" class="anchored" data-anchor-id="alignment"><span class="header-section-number">5.2.2</span> Alignment</h3>
-<p>The aligment method is optimizing for the least discrepance response model parameters among the compared groups. Is fitting a graded response model with probit link, and using the most optimal group as a reference. We are using the statement <code>ALIGNMENT = FIXED(*);</code> within Mplus for these purposes. We rely on the <em>Measurement invariance explorer</em> (https://github.com/MaksimRudnev/MIE.package) to retrieve aligment results.</p>
-<p>The following code (<em>folded</em>) is using as inputs:</p>
+<p>The alignment method is optimizing for the least discrepant measurement model parameters among the compared groups. Is fitting a graded response model with probit link, and using the most optimal group as a reference. We are using the statement <code>ALIGNMENT = FIXED(*);</code> within Mplus for these purposes. We rely on the <em>Measurement invariance explorer</em> (https://github.com/MaksimRudnev/MIE.package) to retrieve aligment results.</p>
+<p>The following code (<em>folded</em>) is used as inputs:</p>
 <ul>
 <li>data_responses <a href="https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&amp;dl=1"><code>data_ex1.rds</code></a></li>
 <li>scale_info = <a href="https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&amp;dl=1"><code>guideline_scale_info_example.xlsx</code></a></li>
@@ -897,7 +897,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="additional-examples" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="additional-examples"><span class="header-section-number">5.4</span> Additional examples</h2>
-<p>The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other with more realistic examples. One example with three countries, were is possible to see that three countries do not obtained strict invariance (example with “Sense of School Belonging” for three countries). And a third example of a template based workflow, where we procede with a full fledge item analysis report including all participating countries (example with “Bullying Scale” for all participating countries).</p>
+<p>The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other data response files. One example with three countries, where is possible to see that three countries do not obtain strict invariance (example with “Sense of School Belonging” for three countries). And a third example of a template-based workflow, where we procede with a full fledge item analysis report including all participating countries (example with the “Bullying Scale” for all participating countries).</p>
 <ul>
 <li>Example with “Sense of School Belonging” for three countries
 <ul>
