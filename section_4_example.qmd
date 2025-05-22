@@ -414,12 +414,12 @@ The current examples are just toy examples, to illustrate the basic capabilities
         -   word template: [`report_template.docx`](https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&st=bn2kl7ca&dl=1)
     -   resulting report: [`template_example_2.docx`](https://www.dropbox.com/scl/fi/sis0bcfhvt0r5tl75tt8y/template_example_2.docx?rlkey=cd88m6p0qeuv5g3khcwtp32vk&st=u9ht2d8q&dl=1)
 -   Example with "Bullying Scale" for all participating countries
-    -   data[`survey_1_g8.rds`](https://www.dropbox.com/scl/fi/2r759ij7gc1w8xeq34zv8/survey_1_g8.rds?rlkey=6ghx1wonw2mfbvy1p4l14ojgf&st=b9a170iz&dl=1)
+    -   data: [`survey_1_g8.rds`](https://www.dropbox.com/scl/fi/2r759ij7gc1w8xeq34zv8/survey_1_g8.rds?rlkey=6ghx1wonw2mfbvy1p4l14ojgf&st=b9a170iz&dl=1)
     -   code template: [`template_example_3.rmd`](https://www.dropbox.com/scl/fi/s3hl05llbdedi79f6nha3/template_example_3.rmd?rlkey=67y5wl45gg7k4snbf14lfrrga&st=f8k6d76n&dl=1)
         -   word template: [`report_template.docx`](https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&st=bn2kl7ca&dl=1)
     -   resulting report [`template_example_3.docx`](https://www.dropbox.com/scl/fi/ps7o8z917cnswtswzkc7u/template_example_3.docx?rlkey=txtazzoz0ennstqurdgbrjlz4&st=mlc980t5&dl=1).
 
-All example files can be downladed from the following [link](https://www.dropbox.com/scl/fo/vn8n2bv3zpi76gpdcf4ii/ABD4kDEMNH5nX6u23HBOZY0?rlkey=xmyi11t4w5t60n0goohdey2fz&st=o3qd1ck6&dl=1).
+All example files can be downloaded from the following [link](https://www.dropbox.com/scl/fo/vn8n2bv3zpi76gpdcf4ii/ABD4kDEMNH5nX6u23HBOZY0?rlkey=xmyi11t4w5t60n0goohdey2fz&st=o3qd1ck6&dl=1).
 
 ## References
 
