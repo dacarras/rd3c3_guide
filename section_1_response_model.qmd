@@ -34,14 +34,14 @@ $$
 probit[Pr(y_{ip} \geq k)] = \tau_{ik} - \lambda_{i}\theta_{p}
 $$ {#eq-grm_probit_link}
 
-We rely on this second formulation, to fit the different model specification to assess measurement invariance. In this formulation factor loadings ( $\lambda_{i}$ ) and thresholds are included ( $-\tau_{ik}$ ) per item, and a term for the theoretical factor ( $θ_{p}$ ). These terms can be used to retrieve a_i and b_ik from the IRT parameterization, using the following expressions (Wang & Wang, 2020):
+We rely on this second formulation, to fit the different model specification to assess measurement invariance. In this formulation factor loadings ( $\lambda_{i}$ ) and thresholds are included ( $-\tau_{ik}$ ) per item, and a term for the theoretical factor ( $θ_{p}$ ). These terms can be used to retrieve $a_{i}$ and $b_{ik}$ from the IRT parameterization, using the following expressions (Wang & Wang, 2020, p87):
 
 $$
-a_{i} = \frac{1}{\sqrt{\lambda_{i}^{-2} -1}}
+a_{i} = \frac{1}{\lambda_{i}}
 $$ {#eq-delta_par_item_slope}
 
 $$
-b_{ik} = \frac{-\tau_{ik}}{\lambda_{i}}
+b_{ik} = \frac{\tau_{ik}}{\lambda_{i}}
 $$ {#eq-delta_par_item_location}
 
 Although the previous expressions do not include variance terms for each item or residual terms (i.e., uniqueness), these terms can be made part of the model in multigroup specifications (Asparouhov & Muthén, 2020). We can make this explicit if we review the GRM parameterizations and its latent scale formulation. The GRM model has two parameterizations, the theta parameterization and the delta parameterization. These two parameterizations reach identical model fit, and the estimated parameters can be considered rotations of one another (Grimm et al., 2016). The difference between two parameterizations are the fixed parameters included for model identification purposes. We used to the latent scale formulation of the GRM to describe this different model constraints. In a single factor model, the latent scale formulation can be expressed as follows:
