@@ -285,8 +285,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Simulations studies from Rutkowski &amp; Svetina (2017) with the graded response model with probit link and a larger amount of compare groups (e.g., 10, 20) suggest that RMSEA &lt; .055 serves as a rule of thumb to select well-fitting measurement models with invariant parameters among compared groups.</p>
 <p>To fit the following models we use as inputs:</p>
 <ul>
-<li>data_responses <a href="https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&amp;dl=1"><code>data_ex1.rds</code></a></li>
-<li>scale_info = <a href="https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&amp;dl=1"><code>guideline_scale_info_example.xlsx</code></a></li>
+<li>data_responses <a href="https://www.dropbox.com/scl/fi/n4ioht1v4zg7gos2a4esj/data_ex1.rds?rlkey=0lxeaq44jfmaf0ub3g3w1kvyv&amp;st=4lysfefy&amp;dl=1"><code>data_ex1.rds</code></a></li>
+<li>scale_info = <a href="https://www.dropbox.com/scl/fi/ujsl6fpvsbjlor2ovc6pg/guideline_scale_info_example.xlsx?rlkey=yx2mwdxt6lr0exh24ddjkexdo&amp;st=j2446g7r&amp;dl=1"><code>guideline_scale_info_example.xlsx</code></a></li>
 <li>scale_id = 1</li>
 <li>and is using the functions:
 <ul>
@@ -539,8 +539,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The alignment method is optimizing for the least discrepant measurement model parameters among the compared groups. Is fitting a graded response model with probit link, and using the most optimal group as a reference. We are using the statement <code>ALIGNMENT = FIXED(*);</code> within Mplus for these purposes. We rely on the <em>Measurement invariance explorer</em> (https://github.com/MaksimRudnev/MIE.package) to retrieve aligment results.</p>
 <p>The following code (<em>folded</em>) is used as inputs:</p>
 <ul>
-<li>data_responses <a href="https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&amp;dl=1"><code>data_ex1.rds</code></a></li>
-<li>scale_info = <a href="https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&amp;dl=1"><code>guideline_scale_info_example.xlsx</code></a></li>
+<li>data_responses <a href="https://www.dropbox.com/scl/fi/n4ioht1v4zg7gos2a4esj/data_ex1.rds?rlkey=0lxeaq44jfmaf0ub3g3w1kvyv&amp;st=4lysfefy&amp;dl=1"><code>data_ex1.rds</code></a></li>
+<li>scale_info = <a href="https://www.dropbox.com/scl/fi/ujsl6fpvsbjlor2ovc6pg/guideline_scale_info_example.xlsx?rlkey=yx2mwdxt6lr0exh24ddjkexdo&amp;st=j2446g7r&amp;dl=1"><code>guideline_scale_info_example.xlsx</code></a></li>
 <li>scale_id = 1</li>
 <li>and is using the function <code>rd3c3::fit_grm2_align_wlsmv()</code> to run an alignment method analysis</li>
 </ul>
@@ -885,15 +885,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>To produce this examplary report the user needs as inputs:</p>
 <ul>
-<li>data_responses <a href="https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&amp;dl=1"><code>data_ex1.rds</code></a></li>
-<li>scale_info = <a href="https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&amp;dl=1"><code>guideline_scale_info_example.xlsx</code></a></li>
+<li>data_responses <a href="https://www.dropbox.com/scl/fi/n4ioht1v4zg7gos2a4esj/data_ex1.rds?rlkey=0lxeaq44jfmaf0ub3g3w1kvyv&amp;st=4lysfefy&amp;dl=1"><code>data_ex1.rds</code></a></li>
+<li>scale_info = <a href="https://www.dropbox.com/scl/fi/ujsl6fpvsbjlor2ovc6pg/guideline_scale_info_example.xlsx?rlkey=yx2mwdxt6lr0exh24ddjkexdo&amp;st=j2446g7r&amp;dl=1"><code>guideline_scale_info_example.xlsx</code></a></li>
 <li>scale_id = 1</li>
-<li>the template <a href="https://www.dropbox.com/scl/fi/nagxx42dcq53rp6dtxex3/guideline_item_report_example.rmd?rlkey=576jslusp6o42pq3105lr789a&amp;dl=1"><code>guideline_item_report_example.rmd</code></a>
+<li>the template <a href="https://www.dropbox.com/scl/fi/iyu8p1jdxclzfu3y220n7/guideline_item_report_example.rmd?rlkey=vamga7s12hcsi4wa9pyrv6awz&amp;st=kzbbnc9y&amp;dl=1"><code>guideline_item_report_example.rmd</code></a>
 <ul>
-<li>and the word template <a href="https://www.dropbox.com/scl/fi/jiixz2dvju0vogva5wlla/report_template.docx?rlkey=1tqqfzbdqwdfy505ms5u5r7w5&amp;dl=1"><code>report_template.docx</code></a></li>
+<li>and the word template <a href="https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&amp;st=bn2kl7ca&amp;dl=1"><code>report_template.docx</code></a></li>
 </ul></li>
 </ul>
-<p>The end product of this procedure can be inspected in the following file <a href="https://www.dropbox.com/scl/fi/cin16b5eq1qxmdiei559o/guideline_item_report_example.docx?rlkey=micaggo6k39n2dmuw3ceuar8w&amp;dl=1"><code>guideline_item_report_example.docx</code></a></p>
+<p>The end product of this procedure can be inspected in the following file <a href="https://www.dropbox.com/scl/fi/h7erj79fqhxs4rz6gv9b7/guideline_item_report_example.docx?rlkey=x6c816u9b87a5mudbzmpbhpdl&amp;st=zgyid2hm&amp;dl=1"><code>guideline_item_report_example.docx</code></a></p>
 </section>
 <section id="additional-examples" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="additional-examples"><span class="header-section-number">5.4</span> Additional examples</h2>
@@ -901,24 +901,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Example with “Sense of School Belonging” for three countries
 <ul>
-<li>data: <a href="https://www.dropbox.com/scl/fi/m7s8qb1k618bihu5jmcou/data_example.rds?rlkey=mo9iylrj1td0hjsqlq0zcemv9&amp;dl=1"><code>data_example.rds</code></a></li>
-<li>code template: <a href="https://www.dropbox.com/scl/fi/o3z2y6epp7s200p0f5mel/template_example_2.rmd?rlkey=7xc311qpjr3plb4gpmbzbn5zo&amp;dl=1"><code>template_example_2.rmd</code></a>
+<li>data: <a href="https://www.dropbox.com/scl/fi/1z7lt5f0jea7thz9xgbct/data_example.rds?rlkey=sl46n4owlgbjiguk1ou6sefym&amp;st=dyfnlr5s&amp;dl=1"><code>data_example.rds</code></a></li>
+<li>code template: <a href="https://www.dropbox.com/scl/fi/1ujerb30tijxz3t3tgrme/template_example_2.rmd?rlkey=kwiirvitq3eo0ptav0znoc7o9&amp;st=hvig6j6k&amp;dl=1"><code>template_example_2.rmd</code></a>
 <ul>
-<li>word template: <a href="https://www.dropbox.com/scl/fi/jiixz2dvju0vogva5wlla/report_template.docx?rlkey=1tqqfzbdqwdfy505ms5u5r7w5&amp;dl=1"><code>report_template.docx</code></a></li>
+<li>word template: <a href="https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&amp;st=bn2kl7ca&amp;dl=1"><code>report_template.docx</code></a></li>
 </ul></li>
-<li>resulting report: <a href="https://www.dropbox.com/scl/fi/h5yq3xwmmmerfw85sb1wn/template_example_2.docx?rlkey=2dutcmiwlknt4pqs27oxtnhtw&amp;dl=1"><code>template_example_2.docx</code></a></li>
+<li>resulting report: <a href="https://www.dropbox.com/scl/fi/sis0bcfhvt0r5tl75tt8y/template_example_2.docx?rlkey=cd88m6p0qeuv5g3khcwtp32vk&amp;st=u9ht2d8q&amp;dl=1"><code>template_example_2.docx</code></a></li>
 </ul></li>
 <li>Example with “Bullying Scale” for all participating countries
 <ul>
-<li>data<a href="https://www.dropbox.com/scl/fi/xmqoem0k87ppmk7sh59r6/survey_1_g8.rds?rlkey=n0pbk17ro6ct725hk9759892w&amp;dl=1"><code>survey_1_g8.rds</code></a></li>
-<li>code template: <a href="https://www.dropbox.com/scl/fi/xy1wdeyzzwy5t96c56ttp/template_example_3.rmd?rlkey=y5h1usj85hjyo8aydh0hp483t&amp;dl=1"><code>template_example_3.rmd</code></a>
+<li>data<a href="https://www.dropbox.com/scl/fi/2r759ij7gc1w8xeq34zv8/survey_1_g8.rds?rlkey=6ghx1wonw2mfbvy1p4l14ojgf&amp;st=b9a170iz&amp;dl=1"><code>survey_1_g8.rds</code></a></li>
+<li>code template: <a href="https://www.dropbox.com/scl/fi/s3hl05llbdedi79f6nha3/template_example_3.rmd?rlkey=67y5wl45gg7k4snbf14lfrrga&amp;st=f8k6d76n&amp;dl=1"><code>template_example_3.rmd</code></a>
 <ul>
-<li>word template: <a href="https://www.dropbox.com/scl/fi/jiixz2dvju0vogva5wlla/report_template.docx?rlkey=1tqqfzbdqwdfy505ms5u5r7w5&amp;dl=1"><code>report_template.docx</code></a></li>
+<li>word template: <a href="https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&amp;st=bn2kl7ca&amp;dl=1"><code>report_template.docx</code></a></li>
 </ul></li>
-<li>resulting report <a href="https://www.dropbox.com/scl/fi/aa6ixsa7f0sb8w8fzd6lc/template_example_3.docx?rlkey=t3x1a2lobtwjdj5irn0p6of2i&amp;dl=1"><code>template_example_3.docx</code></a>.</li>
+<li>resulting report <a href="https://www.dropbox.com/scl/fi/ps7o8z917cnswtswzkc7u/template_example_3.docx?rlkey=txtazzoz0ennstqurdgbrjlz4&amp;st=mlc980t5&amp;dl=1"><code>template_example_3.docx</code></a>.</li>
 </ul></li>
 </ul>
-<p>All example files can be downladed from the following <a href="https://www.dropbox.com/scl/fo/fn6a4qdptrhqls8ew2znx/ALsg5EGe863ZRIOqpkx585M?rlkey=51o0ile0w8o679qjwgl42a7cr&amp;dl=1">link</a>.</p>
+<p>All example files can be downladed from the following <a href="https://www.dropbox.com/scl/fo/vn8n2bv3zpi76gpdcf4ii/ABD4kDEMNH5nX6u23HBOZY0?rlkey=xmyi11t4w5t60n0goohdey2fz&amp;st=o3qd1ck6&amp;dl=1">link</a>.</p>
 </section>
 <section id="references" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="references"><span class="header-section-number">5.5</span> References</h2>

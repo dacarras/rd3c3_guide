@@ -55,8 +55,8 @@ Simulations studies from Rutkowski & Svetina (2017) with the graded response mod
 
 To fit the following models we use as inputs:
 
--   data_responses [`data_ex1.rds`](https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&dl=1)
--   scale_info = [`guideline_scale_info_example.xlsx`](https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&dl=1)
+-   data_responses [`data_ex1.rds`](https://www.dropbox.com/scl/fi/n4ioht1v4zg7gos2a4esj/data_ex1.rds?rlkey=0lxeaq44jfmaf0ub3g3w1kvyv&st=4lysfefy&dl=1)
+-   scale_info = [`guideline_scale_info_example.xlsx`](https://www.dropbox.com/scl/fi/ujsl6fpvsbjlor2ovc6pg/guideline_scale_info_example.xlsx?rlkey=yx2mwdxt6lr0exh24ddjkexdo&st=j2446g7r&dl=1)
 -   scale_id = 1
 -   and is using the functions:
     -   `rd3c3::fit_grm2` for the pooled model
@@ -239,8 +239,8 @@ The alignment method is optimizing for the least discrepant measurement model pa
 
 The following code (*folded*) is used as inputs:
 
--   data_responses [`data_ex1.rds`](https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&dl=1)
--   scale_info = [`guideline_scale_info_example.xlsx`](https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&dl=1)
+-   data_responses [`data_ex1.rds`](https://www.dropbox.com/scl/fi/n4ioht1v4zg7gos2a4esj/data_ex1.rds?rlkey=0lxeaq44jfmaf0ub3g3w1kvyv&st=4lysfefy&dl=1)
+-   scale_info = [`guideline_scale_info_example.xlsx`](https://www.dropbox.com/scl/fi/ujsl6fpvsbjlor2ovc6pg/guideline_scale_info_example.xlsx?rlkey=yx2mwdxt6lr0exh24ddjkexdo&st=j2446g7r&dl=1)
 -   scale_id = 1
 -   and is using the function `rd3c3::fit_grm2_align_wlsmv()` to run an alignment method analysis
 
@@ -396,30 +396,30 @@ knitr::include_graphics(paste0('figure_5_overview.png'))
 
 To produce this examplary report the user needs as inputs:
 
--   data_responses [`data_ex1.rds`](https://www.dropbox.com/scl/fi/aivrd2rw2lhw5o7ly06jn/data_ex1.rds?rlkey=3clglj3fdlh5o6myv3q8et9xz&dl=1)
--   scale_info = [`guideline_scale_info_example.xlsx`](https://www.dropbox.com/scl/fi/ey0z7zpdyhuxcutedyz73/guideline_scale_info_example.xlsx?rlkey=75hh3l7o56vb0njo3eurxxhzm&dl=1)
+-   data_responses [`data_ex1.rds`](https://www.dropbox.com/scl/fi/n4ioht1v4zg7gos2a4esj/data_ex1.rds?rlkey=0lxeaq44jfmaf0ub3g3w1kvyv&st=4lysfefy&dl=1)
+-   scale_info = [`guideline_scale_info_example.xlsx`](https://www.dropbox.com/scl/fi/ujsl6fpvsbjlor2ovc6pg/guideline_scale_info_example.xlsx?rlkey=yx2mwdxt6lr0exh24ddjkexdo&st=j2446g7r&dl=1)
 -   scale_id = 1
--   the template [`guideline_item_report_example.rmd`](https://www.dropbox.com/scl/fi/nagxx42dcq53rp6dtxex3/guideline_item_report_example.rmd?rlkey=576jslusp6o42pq3105lr789a&dl=1)
-    -   and the word template [`report_template.docx`](https://www.dropbox.com/scl/fi/jiixz2dvju0vogva5wlla/report_template.docx?rlkey=1tqqfzbdqwdfy505ms5u5r7w5&dl=1)
+-   the template [`guideline_item_report_example.rmd`](https://www.dropbox.com/scl/fi/iyu8p1jdxclzfu3y220n7/guideline_item_report_example.rmd?rlkey=vamga7s12hcsi4wa9pyrv6awz&st=kzbbnc9y&dl=1)
+    -   and the word template [`report_template.docx`](https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&st=bn2kl7ca&dl=1)
 
-The end product of this procedure can be inspected in the following file [`guideline_item_report_example.docx`](https://www.dropbox.com/scl/fi/cin16b5eq1qxmdiei559o/guideline_item_report_example.docx?rlkey=micaggo6k39n2dmuw3ceuar8w&dl=1)
+The end product of this procedure can be inspected in the following file [`guideline_item_report_example.docx`](https://www.dropbox.com/scl/fi/h7erj79fqhxs4rz6gv9b7/guideline_item_report_example.docx?rlkey=x6c816u9b87a5mudbzmpbhpdl&st=zgyid2hm&dl=1)
 
 ## Additional examples
 
 The current examples are just toy examples, to illustrate the basic capabilities of the library. We include two other data response files. One example with three countries, where is possible to see that three countries do not obtain strict invariance (example with "Sense of School Belonging" for three countries). And a third example of a template-based workflow, where we procede with a full fledge item analysis report including all participating countries (example with the "Bullying Scale" for all participating countries).
 
 -   Example with "Sense of School Belonging" for three countries
-    -   data: [`data_example.rds`](https://www.dropbox.com/scl/fi/m7s8qb1k618bihu5jmcou/data_example.rds?rlkey=mo9iylrj1td0hjsqlq0zcemv9&dl=1)
-    -   code template: [`template_example_2.rmd`](https://www.dropbox.com/scl/fi/o3z2y6epp7s200p0f5mel/template_example_2.rmd?rlkey=7xc311qpjr3plb4gpmbzbn5zo&dl=1)
-        -   word template: [`report_template.docx`](https://www.dropbox.com/scl/fi/jiixz2dvju0vogva5wlla/report_template.docx?rlkey=1tqqfzbdqwdfy505ms5u5r7w5&dl=1)
-    -   resulting report: [`template_example_2.docx`](https://www.dropbox.com/scl/fi/h5yq3xwmmmerfw85sb1wn/template_example_2.docx?rlkey=2dutcmiwlknt4pqs27oxtnhtw&dl=1)
+    -   data: [`data_example.rds`](https://www.dropbox.com/scl/fi/1z7lt5f0jea7thz9xgbct/data_example.rds?rlkey=sl46n4owlgbjiguk1ou6sefym&st=dyfnlr5s&dl=1)
+    -   code template: [`template_example_2.rmd`](https://www.dropbox.com/scl/fi/1ujerb30tijxz3t3tgrme/template_example_2.rmd?rlkey=kwiirvitq3eo0ptav0znoc7o9&st=hvig6j6k&dl=1)
+        -   word template: [`report_template.docx`](https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&st=bn2kl7ca&dl=1)
+    -   resulting report: [`template_example_2.docx`](https://www.dropbox.com/scl/fi/sis0bcfhvt0r5tl75tt8y/template_example_2.docx?rlkey=cd88m6p0qeuv5g3khcwtp32vk&st=u9ht2d8q&dl=1)
 -   Example with "Bullying Scale" for all participating countries
-    -   data[`survey_1_g8.rds`](https://www.dropbox.com/scl/fi/xmqoem0k87ppmk7sh59r6/survey_1_g8.rds?rlkey=n0pbk17ro6ct725hk9759892w&dl=1)
-    -   code template: [`template_example_3.rmd`](https://www.dropbox.com/scl/fi/xy1wdeyzzwy5t96c56ttp/template_example_3.rmd?rlkey=y5h1usj85hjyo8aydh0hp483t&dl=1)
-        -   word template: [`report_template.docx`](https://www.dropbox.com/scl/fi/jiixz2dvju0vogva5wlla/report_template.docx?rlkey=1tqqfzbdqwdfy505ms5u5r7w5&dl=1)
-    -   resulting report [`template_example_3.docx`](https://www.dropbox.com/scl/fi/aa6ixsa7f0sb8w8fzd6lc/template_example_3.docx?rlkey=t3x1a2lobtwjdj5irn0p6of2i&dl=1).
+    -   data[`survey_1_g8.rds`](https://www.dropbox.com/scl/fi/2r759ij7gc1w8xeq34zv8/survey_1_g8.rds?rlkey=6ghx1wonw2mfbvy1p4l14ojgf&st=b9a170iz&dl=1)
+    -   code template: [`template_example_3.rmd`](https://www.dropbox.com/scl/fi/s3hl05llbdedi79f6nha3/template_example_3.rmd?rlkey=67y5wl45gg7k4snbf14lfrrga&st=f8k6d76n&dl=1)
+        -   word template: [`report_template.docx`](https://www.dropbox.com/scl/fi/n4c5uf6f498z9v6qvg4xx/report_template.docx?rlkey=yc0b2914kn2clsxrebiz5etgt&st=bn2kl7ca&dl=1)
+    -   resulting report [`template_example_3.docx`](https://www.dropbox.com/scl/fi/ps7o8z917cnswtswzkc7u/template_example_3.docx?rlkey=txtazzoz0ennstqurdgbrjlz4&st=mlc980t5&dl=1).
 
-All example files can be downladed from the following [link](https://www.dropbox.com/scl/fo/fn6a4qdptrhqls8ew2znx/ALsg5EGe863ZRIOqpkx585M?rlkey=51o0ile0w8o679qjwgl42a7cr&dl=1).
+All example files can be downladed from the following [link](https://www.dropbox.com/scl/fo/vn8n2bv3zpi76gpdcf4ii/ABD4kDEMNH5nX6u23HBOZY0?rlkey=xmyi11t4w5t60n0goohdey2fz&st=o3qd1ck6&dl=1).
 
 ## References
 
